@@ -1,0 +1,20 @@
+@mixin flexbox($justify-content: space-between, $flex-flow: row wrap) {
+	display: flex;
+	flex-flow: $flex-flow;
+	justify-content: $justify-content;
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+}

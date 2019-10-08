@@ -1,0 +1,52 @@
+// Colors
+
+$white: #fff;
+$black: #21232b;
+$light-white: #faf5ef;
+$light-grey: #dcd8cb;
+$medium-grey: #707070;
+$grey: #b7b7b7;
+$dark-grey: #7e7e7d;
+$darkest-grey: #292929;
+$light-pink: #ffeae1;
+$light-blue: #7db6ef;
+$blue: #246fc9;
+$medium-blue: #195090;
+$dark-blue: #132d7f;
+$dark-green: #0b354c;
+$green: #3ea576;
+$salmon: #dd6052;
+$brown: #b14437;
+$primary-color: $blue;
+$accent-color: $salmon;
+$base-color: $darkest-grey;
+$base-bg: $light-white;
+
+//Fonts
+$base-font: 'Avenir Book', sans-serif;
+$heading-font: 'Avenir', sans-serif;
+$base-font-size: 1.9rem;
+$base-font-size-m: 1.6rem;
+
+//Transitions
+$transition: all 0.2s ease-in-out;
+$transition4: all 0.4s ease-in-out;
+
+//Widths:
+$xs: 360px;
+$s: 480px;
+$m: 768px;
+$l: 1024px;
+$xl: 1280px;
+
+$max-width: 1230px;
+
+// Grid
+$grid-columns: 12;
+
+$xs-max: $s; // Set xs breakpoint's max width
+$sm-max: $m; // Set sm breakpoint's max width
+$md-max: $l; // Set md breakpoint's max width
+$lg-max: $xl; // Set lg breakpoint's max width
+
+$gutter: 1rem; // Set gutter size
