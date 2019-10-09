@@ -1,30 +1,25 @@
 // Colors
 
 $white: #fff;
-$black: #21232b;
+$black: #333;
 $light-white: #faf5ef;
 $light-grey: #dcd8cb;
 $medium-grey: #707070;
 $grey: #b7b7b7;
 $dark-grey: #7e7e7d;
 $darkest-grey: #292929;
-$light-pink: #ffeae1;
-$light-blue: #7db6ef;
-$blue: #246fc9;
-$medium-blue: #195090;
-$dark-blue: #132d7f;
-$dark-green: #0b354c;
-$green: #3ea576;
-$salmon: #dd6052;
-$brown: #b14437;
+$red: #c61641;
+$blue: #022060;
+$dark-blue: #01153f;
 $primary-color: $blue;
-$accent-color: $salmon;
-$base-color: $darkest-grey;
-$base-bg: $light-white;
+$secondary-color: $dark-blue;
+$accent-color: $red;
+$base-color: $black;
+$base-bg: $white;
 
 //Fonts
-$base-font: 'Avenir Book', sans-serif;
-$heading-font: 'Avenir', sans-serif;
+$base-font: 'Montserrat', sans-serif;
+$heading-font: 'GT Sectra Fine', serif;
 $base-font-size: 1.9rem;
 $base-font-size-m: 1.6rem;
 
