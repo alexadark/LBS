@@ -68,3 +68,4 @@ library/vendors/composer
 assets/img/.DS_Store
 
 config.codekit3
+lbs.code-workspace
