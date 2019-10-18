@@ -32,9 +32,9 @@ html {
 body {
   font-family: $base-font;
   @include min-screen($m) {
-    font-size: $base-font-size;
+    font-size: $base-font-size-m;
   }
-  font-size: $base-font-size-m;
+  font-size: $base-font-size;
   color: $base-color;
   background: $base-bg;
   line-height: 1.5;

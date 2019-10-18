@@ -14,6 +14,12 @@
  * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
  * plug-in, you can safely delete this block.
  */
+
+require_once 'init.php';
+require_once 'functions/helper-functions.php';
+require_once 'functions/enqueue-assets.php';
+require_once 'functions/widget-areas.php';
+
 $composer_autoload = __DIR__ . '/vendor/autoload.php';
 if (file_exists($composer_autoload)) {
 	require_once $composer_autoload;
