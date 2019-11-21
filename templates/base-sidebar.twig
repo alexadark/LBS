@@ -1,0 +1,44 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+		<header class="header">
+			{% block header %}
+				{% include "header.twig" %}
+			{% endblock %}
+		</header>
+		{% include "partial/browse-case-sub-menu.twig" %}
+		<section id="content" role="main" class="content-wrapper">
+			{% include 'partial/breadcrumb.twig' %}
+			<div class="wrapper with-sidebar">
+				<div>
+					{% if title %}<h1>{{title}}</h1>{% endif %}
+					{% if result_search %}
+						<h4 class="search-result">{{ result_search }}</h4>
+					{% endif %}
+					{% block content %}
+						Sorry, no content
+					{% endblock %}
+				</div>
+				<aside class="layout-sidebar">
+					{% block sidebar %}
+						Sorry, no content on sidebar
+					{% endblock %}
+				</aside>
+			</div>
+		</section>
+
+		{% block footer %}
+			<footer id="footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+</html>

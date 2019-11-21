@@ -1,0 +1,96 @@
+footer#footer{
+  margin-top: 50px;
+}
+.site-footer{
+  background-color: $dark-blue;
+  color: $white;
+  padding:90px 0 20px;
+  overflow: hidden;
+  a{
+    color: $white;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 4rem;
+  }
+  ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+    li{
+      margin:10px 0;
+    }
+  }
+  .footer-social{
+    margin:70px 0;
+    ul{
+      display: flex;
+      li{
+        margin-right: 20px;
+        background-color: $white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        a{
+          color: $dark-blue;
+          font-size: 2.2rem;
+          position: relative;
+          left: 1px;
+          top: 1px;
+        }
+      }
+    }
+  }
+  .footer-links{
+    display: flex;
+    .footer-col{
+      display: flex;
+      width:65%;
+      ul{
+        width:50%;
+      }
+      &--right{
+        .signup-form{
+          margin-top: 20px;
+          font-weight: 300;
+          font-size: 1.7rem;
+          button{
+            border:1px solid $white;
+            display: block;
+            background-color: transparent;
+            color:$white;
+            width:100%;
+            padding: 8px;
+            margin-top: 20px;
+            cursor: pointer;
+            &:hover{
+              background-color: $white;
+              color: $dark-blue;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom{
+      hr{
+        height:2px;
+        background-color: white;
+        opacity:.46;
+        margin:40px 0;
+      }
+      ul{
+        display: flex;
+        float: left;
+        li{
+          margin-right:30px;
+        }
+      }
+      a.copyright{
+        float: right;
+        margin:10px 0;
+        font-weight: 300;
+        font-size: 1.7rem;
+      }
+  }
+}

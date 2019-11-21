@@ -1,0 +1,85 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <h2 class="black-text">Your Details</h2>
+
+    <form action="" class="profile-form">
+        <div class="row">
+            <label for="cat1">User Category</label>
+            <div class="cat-radio">
+                <div><input id="c1" type="radio" value="Educator" name="category"><label for="c1">Educator</label></div>
+                <div><input id="c2" type="radio" value="Programme Administrator" name="category"><label for="c2">Programme Administrator</label></div>
+                <div class="fac-name"><label for="">Faculty Name: *</label><input type="text"></div>
+                <div><input id="c3" type="radio" value="PHD Student" name="category"><label for="c3">PHD Student</label></div>
+                <div><input id="c4" type="radio" value="Corporate" name="category"><label for="c4">Corporate</label></div>
+                <div><input id="c5" type="radio" value="Educator" name="category"><label for="c5">Educator - Free <i class="ico-info"></i></label></div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="">Title: *</label>
+            <div class="input select-box dr"><select name="title" id="">
+                    <option value="Dr">Dr</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <label for="">Name: *</label>
+            <div class="input double">
+                <input type="text" name="firstname" placeholder="First">
+                <input type="text" name="lastname" placeholder="Last">
+            </div>
+        </div>
+        <div class="row">
+            <label for="">Organisation: *</label>
+            <div class="input"><input type="text" name="org" placeholder=""></div>
+        </div>
+        <div class="row">
+            <label for="">Organisation Department:</label>
+            <div class="input"><input type="text" name="org_dep" placeholder="www.spadu.com"></div>
+        </div>
+        <div class="row">
+            <label for="">Organisation Website: *</label>
+            <div class="input"><input type="text" name="org_web"></div>
+        </div>
+        <div class="row">
+            <label for="">Job Title: *</label>
+            <div class="input select-box"><select name="title" id="">
+                    <option value="">Choose</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <label for="">Education Status: *</label>
+            <div class="input"><input type="text" name="ed_stat"><i class="ico-info"></i></div>
+        </div>
+        <div class="row">
+            <label for="">Email: *</label>
+            <div class="input"><input type="email" name="email"></div>
+        </div>
+        <div class="row">
+            <label for="">Confirm email: *</label>
+            <div class="input"><input type="email" name="cemail"><i class="ico-info"></i></div>
+        </div>
+        <div class="row">
+            <label for="">Password: *</label>
+            <div class="input"><input type="password" name="pass"></div>
+        </div>
+        <div class="row">
+            <label for="">Confirm password: *</label>
+            <div class="input"><input type="password" name="cpass"></div>
+        </div>
+        <div class="row">
+            <label for="">How did you hear about us?</label>
+            <div class="input"><input type="text" name="hdy"></div>
+        </div>
+        <div class="row ">
+            <label for=""></label>
+            <div class="button-row">
+                <a href="" class="cancel">Cancel</a>
+                <button class="default-button">Create</button>
+            </div>
+        </div>
+
+    </form>
+{% endblock %}

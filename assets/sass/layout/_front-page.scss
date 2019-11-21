@@ -1,0 +1,150 @@
+.hero{
+  .cont-image{
+    height:380px;
+    //background: url('./assets/img/londonbusinessschool.png') center no-repeat;
+    -webkit-background-size:cover;
+    background-size:cover;
+    position: relative;
+  }
+  .browse-topics{
+    background-color: $blue;
+    //position: absolute;
+    //bottom:0;
+    width:100%;
+    display: flex;
+    align-items: center;
+    padding:10px 0;
+    h3{
+      color: white;
+      min-width: 200px;
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-top: 10px;
+      font-family: $heading-font;
+    }
+    ul {
+      margin:0;
+      text-align: center;
+      li{
+        border: 1px solid white;
+        display: inline-block;
+        padding: 3px 10px;
+        margin: 5px 5px;
+        a{
+          color: white;
+        }
+        &:hover{
+          background-color: white;
+          a{
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+  .search-cases{
+    background-color: rgba(0,0,0,.29);
+    width:33%;
+    float: right;
+    height:100%;
+    padding: 10px 30px;
+    color: white;
+    h3{
+      margin: 10px 0
+    }
+    input{
+      width:100%;
+      padding: 10px;
+      margin:5px 0;
+      border:none;
+    }
+    .buttons{
+      padding-top: 10px;
+    }
+    button{
+      background-color: $blue;
+      padding:10px 30px;
+      font-size: 1.8rem;
+      font-weight:400;
+      color: white;
+      cursor: pointer;
+      &:hover{
+        color: $blue;
+        background-color: white;
+      }
+    }
+    a{
+      float: right;
+      color: white;
+      text-decoration: underline;
+      padding:5px 0;
+      max-width:100px;
+      line-height: 1.9rem;
+    }
+  }
+}
+.embed-post{
+  display: flex;
+  justify-content: space-between;
+  .podcast{
+    width:  66.5%;
+  }
+  .twitter{
+    width: 32.5%;
+    i.twitter-icon {
+      position: relative;
+      bottom: 2px;
+    }
+  }
+  h2{
+    background: $blue;
+    padding:4px 20px;
+    color: white;
+    i{
+      float: right;
+    }
+  }
+}
+.social-media{
+  float: right;
+  .social-sharing{
+    text-align: right;
+    min-width:200px;
+    margin-top: -30px;
+    a{
+      transform: scale(.7);
+      margin:0;
+      margin-right:-8px;
+    }
+  }
+}
+.bottom-banner{
+  margin:50px 0;
+  display: flex;
+  align-items: center;
+  background-color: $blue;
+  text-align: center;
+  .banner{
+    img{
+      width:100%;
+      display: block;
+      height:auto;
+    }
+  }
+  .subscribe{
+    a{
+      color: white;
+    }
+    font-size: 2.4rem;
+    font-weight: 300;
+    min-width:260px;
+    span {
+      font-size: 4.4rem;
+      color: white;;
+      position: relative;
+      top:7px;
+      left:-5px;
+    }
+  }
+}

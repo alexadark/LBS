@@ -9,6 +9,15 @@
  * @since   Timber 0.1
  */
 
+require_once 'init.php';
+require_once 'functions/helper-functions.php';
+require_once 'functions/enqueue-assets.php';
+require_once 'functions/widget-areas.php';
+
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page();
+}
+
 /**
  * If you are installing Timber as a Composer dependency in your theme, you'll need this block
  * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org

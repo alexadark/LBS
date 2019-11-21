@@ -25,6 +25,8 @@ if ( is_day() ) {
 	$context['title'] = 'Archive: ' . get_the_date( 'M Y' );
 } elseif ( is_year() ) {
 	$context['title'] = 'Archive: ' . get_the_date( 'Y' );
+} elseif ( is_tax() ) {
+    $context['title'] = single_term_title('', false);
 } elseif ( is_tag() ) {
 	$context['title'] = single_tag_title( '', false );
 } elseif ( is_category() ) {

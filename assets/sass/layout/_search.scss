@@ -1,0 +1,136 @@
+.search-item {
+  border-bottom: 2px solid #d7d4d1;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  .button-links{
+    margin-left: -5px;
+  }
+  .heading{
+    margin-top: 20px;
+    display: flex;
+    .profile-picture{
+      min-width:66px;
+      margin-right: 10px;
+      height:93px;
+      background-size: cover;
+      background-position: center center;
+      box-shadow: 0 0 23px 1px rgba(0, 0, 0, 0.32);
+    }
+    .profile-info{
+      position: relative;
+      padding-right: 5px;
+      h3{
+        font-family: $heading-font;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: $blue;
+        margin:0;
+        line-height: 3rem;
+      }
+      h4{
+        line-height: 1.8rem;
+        margin:0;
+        font-size: 1.4rem;
+        font-weight: 300;
+      }
+      .price{
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-top: 16px;
+      }
+      .number-input{
+        position: absolute;
+        right: 0;
+        bottom: 3px;
+        width:45px;
+        color: $text-grey;
+        padding:0 5px;
+      }
+      .button-links{
+        li{
+          margin:7px 5px;
+        }
+      }
+    }
+  }
+}
+.with-sidebar{
+  display: flex;
+  justify-content: space-between;
+  aside{
+    width:320px;
+    min-width:320px;
+    padding-top: 30px;
+    h2{
+      &.sidebar-title{
+        color: black;
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+.search-result{
+  margin-top:-20px;
+  margin-bottom: 40px;
+  font-weight:500;
+  font-size: 1.8rem;
+}
+.advanced-search{
+  .heading{
+    max-width: 800px;
+  }
+}
+
+.search-form form{
+  margin-bottom: 50px;
+  .cont-form{
+    width:540px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  button{
+    padding:10px 30px;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  .col{
+    width:48.5%;
+    input{
+      width:100%;
+      padding:10px 10px;
+      margin:5px 0;
+      border: 2px solid rgba(153, 153, 153, 0.51);
+    }
+    .select-wrap{
+      height:46px;
+      border: 2px solid rgba(153, 153, 153, 0.51);
+      margin:5px 0;
+      padding:0;
+      select{
+        width:100%;
+        background-color: white;
+        height:41px;
+        padding:5px 10px;
+        border:none;
+        color: $black;
+      }
+    }
+    p{
+      margin:2px 0;
+    }
+    .date-range{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      .select-wrap{
+        width: 85px;
+      }
+      .to{
+        margin:0 15px;
+      }
+    }
+  }
+}

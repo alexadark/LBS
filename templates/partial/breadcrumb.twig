@@ -1,0 +1,14 @@
+<div class="heading-section">
+    <div class="breadcrumb">
+        {% if function('is_front_page') %}
+            {{ function('get_breadcrumb') }} > London Business School
+            Case Collection
+        {% else %}
+            {{ function('get_hansel_and_gretel_breadcrumbs') }}
+        {% endif %}
+    </div>
+    <div class="social-media">
+        {{ function ('do_shortcode', "[wp_social_sharing social_options='facebook,twitter,linkedin']") }}
+    </div>
+
+</div>

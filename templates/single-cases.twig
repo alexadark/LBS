@@ -1,0 +1,143 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="single-case">
+        <div class="middle-section">
+            <div class="left-content">
+                <div class="heading">
+                    {% set imgSrc = post.thumbnail.src %}
+                    {% if imgSrc %}
+                    <div class="profile-picture" style="background-image: url('{{ imgSrc }}')"></div>
+                    {% else %}
+                        <div class="profile-picture"></div>
+                    {% endif %}
+                    <div class="profile-info">
+                        <p><i class="doc-icon"></i>Main case
+                            {% if post.new_case %}
+                                <span href="" class="flag new">New</span></p>
+                            {% endif %}
+                        <h1>{{ post.title | e('esc_html') }}</h1>
+                        <h3>{{ post.author_display_text | e('esc_html') }}</h3>
+                        <div class="publication-date">{{ post.registration_date | date('F Y') }}</div>
+                    </div>
+                </div>
+                <div>
+                    {% if post.preview_file_url %}
+                        <p><a target="_blank" href="{{ function('wp_get_attachment_url',post.preview_file_url) }}" class="default-button">Preview case</a></p>
+                    {% endif %}
+                </div>
+                {% if topics %}
+                <div class="heading-links">
+                    <ul class="button-links">
+                        {{ function('the_terms',post.ID, 'topics', '<li>','</li><li>','</li>') }}
+                    </ul>
+                </div>
+                {% endif %}
+
+                <div>
+                    {{ post.content | e('wp_kses_post') | wpautop }}
+                </div>
+
+                <h2>Learning objectives</h2>
+                {{ post.learning_objectives | e('wp_kses_post') | wpautop }}
+
+                <h2>Details</h2>
+                <table class="details">
+                    <tr>
+                        <td>Publication Date:</td>
+                        <td>{{ post.registration_date | date('F Y') }}</td>
+                    </tr>
+                    <tr>
+                        <td>LBS Case Code:</td>
+                        <td>{{ post.case_reference_number }}</td>
+                    </tr>
+                    <tr>
+                        <td>Topic:</td>
+                        <td>{{ function('the_terms',post.ID, 'topics') }}</td>
+                    </tr>
+                    <tr>
+                        <td>Subjects:</td>
+                        <td>{{ function('the_terms',post.ID, 'subjects') }}</td>
+                    </tr>
+                    <tr>
+                        <td>Industry:</td>
+                        <td>{{ function('the_terms',post.ID, 'industry') }}</td>
+                    </tr>
+                    <tr>
+                        <td>Geography:</td>
+                        <td>{{ function('the_terms',post.ID, 'geography') }}</td>
+                    </tr>
+                    {% if post.protagonist %}
+                    <tr>
+                        <td>Protagonist:</td>
+                        <td>{{ post.protagonist }}</td>
+                    </tr>
+                    {% endif %}
+                    <tr>
+                        <td>Pages:</td>
+                        <td>{{ post.pages }}</td>
+                    </tr>
+                    <tr>
+                        <td>Format:</td>
+                        <td class="upper">{{ post.file_format }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="sidebar">
+                <div class="add-to-cart">
+                    {#<a href="" class="login-register">Login or register <br>to see prices</a>#}
+                    <div class="cart-price">
+                        <span class="price">£ {{ post.price_student }}</span> <br>
+                        Pricing for General Customer / Student
+                    </div>
+                    <a href="" class="default-button">Add to cart</a>
+                </div>
+                {% if post.teaching_notes %}
+                <h2>Associated</h2>
+                {% set item = post.teaching_notes[0] %}
+                <div class="pdf-link">
+                    <i class="hat-icon"></i>
+                    <div>
+                        {% set pdf = function ('get_field', 'teaching_note_file', item) %}
+                        <a target="_blank" href="{{ pdf.url }}">{{ function('get_the_title', item) }}</a>
+                        <div class="pdf-info">{{ function ('get_field', 'file_details', item) }}</div>
+                    </div>
+                </div>
+                {% if post.related_cases %}
+                    {% for item in post.related_cases %}
+                        <div class="pdf-link">
+                            <i class="doc-icon"></i>
+                            <div>
+                                <a href="{{ function ('get_permalink', item) }}">{{ function('get_the_title', item) }}</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <div class="separator"></div>
+                {% endif %}
+
+                {% if post.related_cases %}
+                    <h2>Other cases: <br>
+                        Organisational behaviour</h2>
+                    {% for item in last_cases %}
+                        <div class="pdf-link">
+                            <i class="doc-icon"></i>
+                            <div>
+                                <a href="{{ function ('get_permalink', item) }}">{{ function('get_the_title', item) }}</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+    {% include "partial/bottom-banner.twig" %}
+    <div class="topics">
+        <h2>Topics</h2>
+        <ul>
+            {{ function('print_terms', 'topics') }}
+        </ul>
+    </div>
+    {% include 'partial/side-cart.twig' %}
+{% endblock %}

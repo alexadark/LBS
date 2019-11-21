@@ -1,0 +1,44 @@
+{# see `archive.twig` for an alternative strategy of extending templates #}
+{% extends "base.twig" %}
+
+{% block content %}
+    {# see `base.twig:27` for where this block's content will be inserted #}
+    <div class="search-page">
+        <div class="content-wrapper">
+            <a href="" class="default-button edit-profile">Edit profile</a>
+            {% for post in posts %}
+                {#{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}#}
+                <div class="search-item your-account">
+                    <div class="heading">
+                        {% set imgSrc = post.thumbnail.src %}
+                        {% if imgSrc %}
+                            <a href="{{ post.link }}"><div class="profile-picture" style="background-image: url('{{ imgSrc }}')"></div></a>
+                        {% else %}
+                            <a href="{{ post.link }}"><div class="profile-picture"></div></a>
+                        {% endif %}
+                        <div class="profile-info">
+                            <h4 class="date">{{ post.date | date('d-M-Y') }}</h4>
+                            <h3><a href="{{ post.link }}">{{ post.title | e('esc_html') }}</a></h3>
+                            <h4 class="by">{{ post.author_display_text | e('esc_html') }}</h4>
+                            <ul class="button-links">
+                                <li><a href="" class="">Download</a></li>
+                                <li><a href="">Receipt</a></li>
+                            </ul>
+                            <div>Copies purchased: 80 <a href="">Manage</a></div>
+                            <div>Copies downloaded: 45 &nbsp;<a href="">Get download link</a></div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+        </div>
+
+    </div>
+    <div class="topics">
+        <h2>Topics</h2>
+        <ul>
+            {{ function('print_terms', 'topics') }}
+        </ul>
+    </div>
+{% endblock %}

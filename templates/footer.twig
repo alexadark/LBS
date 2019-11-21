@@ -1,1 +1,21 @@
-Copyright {{"now"|date('Y')}}
+<footer class="site-footer">
+    <div class="wrapper">
+            <div class="footer-links">
+                {#{{ function ('dynamic_sidebar', 'footer_menus') }}#}
+                <div class="footer-col">
+                    {{ function ('the_field', 'left_menu', 'option' ) }}
+                    {{ function ('the_field', 'middle_menu', 'option' ) }}
+                </div>
+                <div class="footer-col--right">
+                    {{ function ('the_field', 'right_menu', 'option' ) }}
+                </div>
+            </div>
+            <div class="footer-social">
+                {{ function ('the_field', 'social_network', 'option' ) }}
+            </div>
+            <div class="footer-bottom">
+                <hr>
+                {{ function ('the_field', 'footer_bottom', 'option' ) }}
+            </div>
+    </div>
+</footer>

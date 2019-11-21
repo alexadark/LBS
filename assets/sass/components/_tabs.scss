@@ -1,0 +1,168 @@
+/*
+ CSS for the main interaction
+*/
+.tabset > input[type="radio"] {
+  position: absolute;
+  left: -200vw;
+}
+
+.tabset .tab-panel {
+  display: none;
+}
+
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+  display: block;
+}
+
+.tabset > label {
+  position: relative;
+  display: inline-block;
+  padding: 5px 20px 5px;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  cursor: pointer;
+  font-weight: 300;
+  color: $blue;
+  background-color: #f7f7f7;
+}
+
+.tabset > label:hover,
+.tabset > input:focus + label {
+  color: $white;
+  background-color: $blue;
+}
+
+.tabset > label:hover::after,
+.tabset > input:focus + label::after,
+.tabset > input:checked + label::after {
+  background-color: $blue;
+}
+
+.tabset > input:checked + label {
+  border-color: #ccc;
+  //border-bottom: 1px solid #fff;
+  background-color: $blue;
+  margin-bottom: -1px;
+  color: $white;
+}
+
+.tab-panel {
+  border-top: 2px solid $blue;
+}
+
+/*
+ Demo purposes only
+*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.tabset {
+  margin-top: 30px;
+  font-size: 1.8rem;
+}
+
+.tabs {
+  position: relative;
+  min-height: 200px; /* This part sucks */
+  clear: both;
+  margin: 25px 0;
+  display: none;
+  margin-top: 30px;
+}
+.tab {
+  float: left;
+
+}
+
+.contenttabs{
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  transform: scale(1.010);
+  .case{
+    flex-grow: 1;
+    width: 33%;
+
+    .inner-case{
+      border: 1px solid $border-color;
+      margin:0 5px;
+      position: relative;
+      padding-bottom: 20px;
+      .cont-image{
+        max-height:180px;
+        overflow: hidden;
+        img{
+          width:100%;
+          height:auto;
+        }
+      }
+      .desc{
+        h4 a{
+          color: $black;
+        }
+        font-size: 1.6rem;
+        padding:0 10px;
+        color: $black;
+      }
+      ul.category{
+        margin:0;
+        list-style: none;
+        padding:0;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1.2rem;
+        position: absolute;
+        bottom:10px;
+        &.hidden{
+          position: inherit;
+          visibility: hidden;
+        }
+        li{
+          border:1px solid $black;
+          padding:3px 10px;
+          margin: 5px 5px 5px 10px;
+          &:hover{
+            background-color: $blue;
+            a{
+              color: white;
+            }
+          }
+          a{
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}
+
+.featured-case{
+  display: flex;
+  margin:20px 0;
+  border:1px solid $border-color;
+  &--image{
+    min-width:300px;
+    background: url("./assets/img/world-map-with-network-background-vector.jpg") center no-repeat;
+    background-size: cover;
+  }
+  .content{
+    &--inner{
+      padding:20px 20px;
+      h2{
+        margin-bottom: 0;
+      }
+      .author{
+        position: relative;
+        top:-5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{% block header %}
+    <div class="wrapper">
+        <h1 class="hdr-logo" role="banner">
+            <a class="hdr-logo-link" href="{{site.url}}" rel="home">
+                <img alt="{{ site.name }}" src="{{ function('get_site_icon_url') | resize(120) }}"/>
+            </a>
+        </h1>
+        <div class="menu-icons">
+            <a href=""><i class="fas fa-search"></i></a>
+            <a href=""><i class="fas fa-bars"></i></a>
+        </div>
+        <div class="right-block">
+            <div class="top-menu-items">
+                <i class="ico-search"></i>
+                <form id="searchformhead" method="get" action="{{ function ('home_url', '/') }}">
+                    <input type="text" placeholder="Search Cases" name="s" value="{{ search_input_value }}">
+                </form>
+                <a href="#">Create a profile</a>
+                <a href="#">Login to Case Collection</a>
+                <a href="#" class="cart"><i class="cart-icon"></i></a>
+            </div>
+            <nav id="nav-main" class="nav-main" role="navigation">
+                {% include "menu.twig" with {'items': menu.get_items} %}
+            </nav><!-- #nav -->
+        </div>
+    </div>
+{% endblock %}

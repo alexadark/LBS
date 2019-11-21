@@ -1,0 +1,95 @@
+.nav-main {
+  ul{
+    list-style: none;
+    margin:0;
+  }
+  ul.main-menu{
+    li{
+      padding-left: 20px;
+      position: relative;
+      &.menu-item-has-children{
+        ul{
+          min-width:200px;
+          position: absolute;
+          background: $blue;
+          margin: 0;
+          padding: 30px 0px 10px;
+          display: none;
+          left: 0px;
+          li{
+            margin:0;
+            padding: 5px 20px 0px 30px;
+          }
+        }
+        &:hover{
+          ul{
+            display: block;
+            li{
+              a{
+                color: white;;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.wrapper.relative{
+  position: relative;
+  z-index:9;
+}
+.cases-sub-menu{
+  display: none;
+  background-color: white;
+  padding:30px 0px 80px;
+  border-bottom: 4px solid $red;
+  box-shadow: 0 0 23px 1px rgba(0, 0, 0, 0.32);
+  overflow: hidden;
+  text-align: left;
+  position: absolute;
+  width:100%;
+  .put-right {
+    max-width:680px;
+    float: right;
+    display: flex;
+    padding-right: 10px;
+  }
+  .goto{
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 500;
+    font-family: $heading-font;
+    color: $blue;
+    width:90px;
+    margin-top: 10px;
+  }
+  a{
+    padding:10px 20px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin:5px;
+    display: inline-block;
+    &.inverse{
+      background-color: white;
+      color: $blue;
+      &:hover{
+        background-color: $blue;
+        color: white;
+      }
+    }
+  }
+}
+.red-style{
+  border-bottom: 40px solid $blue;
+  //background-color: $blue;
+  position: absolute;
+  width:100%;
+  bottom: 0;
+}
+.ico-arrow{
+  content: url('./assets/img/browse-case.png');
+  position: relative;
+  top:5px;
+  margin-right: 10px;
+}

@@ -1,9 +1,77 @@
-{# This file demonstrates using most of the index.twig template and modifying 
-   just a small part. See `search.twig` for an example of another approach #}
-
-{% extends "index.twig" %}
+{# see `archive.twig` for an alternative strategy of extending templates #}
+{% extends "base-sidebar.twig" %}
 
 {% block content %}
-  <h3>This is my archive</h3>
-  {{ parent() }}
+  {# see `base.twig:27` for where this block's content will be inserted #}
+  <div class="search-page">
+    <div class="content-wrapper">
+      {% for post in posts %}
+        {#{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}#}
+        <div class="search-item">
+          <div class="heading">
+            {% set imgSrc = post.thumbnail.src %}
+            {% if imgSrc %}
+              <a href="{{ post.link }}"><div class="profile-picture" style="background-image: url('{{ imgSrc }}')"></div></a>
+            {% else %}
+              <a href="{{ post.link }}"><div class="profile-picture"></div></a>
+            {% endif %}
+            <div class="profile-info">
+              <h4>{{ post.date | date('d-M-Y') }}</h4>
+              <h3><a href="{{ post.link }}">{{ post.title | e('esc_html') }}</a></h3>
+              <h4>{{ post.author_display_text | e('esc_html') }}</h4>
+              <ul class="button-links">
+                {{ function('the_terms',post.ID, 'topics', '<li>','</li><li>','</li>') }}
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+      {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+    </div>
+
+  </div>
+{% endblock %}
+{% block sidebar %}
+  <h2 class="sidebar-title">Browse Case studies by:</h2>
+  <div class="accordion">
+    <div class="block">
+      <div class="tab">
+        <input type="checkbox" id="rd1" name="rd">
+        <label class="tab-label" for="rd1">Topics</label>
+        <div class="tab-content">
+          <ul class="list-terms">
+            {{ function('print_terms', 'topics') }}
+          </ul>
+        </div>
+      </div>
+      <div class="tab">
+        <input type="checkbox" id="rd2" name="rd">
+        <label class="tab-label" for="rd2">Subject</label>
+        <div class="tab-content">
+          <ul class="list-terms">
+            {{ function('print_terms', 'subjects') }}
+          </ul>
+        </div>
+      </div>
+      <div class="tab">
+        <input type="checkbox" id="rd3" name="rd">
+        <label class="tab-label" for="rd3">Industry</label>
+        <div class="tab-content">
+          <ul class="list-terms">
+            {{ function('print_terms', 'industry') }}
+          </ul>
+        </div>
+      </div>
+      <div class="tab">
+        <input type="checkbox" id="rd4" name="rd">
+        <label class="tab-label" for="rd4">Geography</label>
+        <div class="tab-content">
+          <ul class="list-terms">
+            {{ function('print_terms', 'geography') }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

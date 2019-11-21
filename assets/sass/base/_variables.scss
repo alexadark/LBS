@@ -16,7 +16,8 @@ $secondary-color: $dark-blue;
 $accent-color: $red;
 $base-color: $black;
 $base-bg: $white;
-
+$border-color: #c3c1be;
+$text-grey: #333;
 //Fonts
 $base-font: 'Montserrat', sans-serif;
 $heading-font: 'GT Sectra Fine', serif;
@@ -45,3 +46,4 @@ $md-max: $l; // Set md breakpoint's max width
 $lg-max: $xl; // Set lg breakpoint's max width
 
 $gutter: 1rem; // Set gutter size
+

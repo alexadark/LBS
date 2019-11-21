@@ -1,0 +1,75 @@
+header.header{
+  background-color: $blue;
+  .hdr-logo{
+    margin:0;
+    img{
+      width:128px;
+    }
+  }
+  .wrapper{
+    display: flex;
+    justify-content: space-between;
+    @include max-screen($l) {
+      padding-right:10px;
+    }
+  }
+  a{
+    color: $white;
+  }
+  .menu-icons{
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    a{
+      padding:0 10px;
+    }
+    display: none;
+  }
+  .right-block{
+    display: none;
+    @include min-screen($m){
+      display: block;
+    }
+  }
+  .top-menu-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    padding:20px 0;
+    position: relative;
+    .ico-search{
+      position: absolute;
+      display: inline-block;
+      width:16px;
+      height: 16px;;
+      background: url('./assets/img/ico-search.png') no-repeat bottom center;
+      left:7px;
+      top:26px;
+      cursor: pointer;
+    }
+    > * {
+      margin:0 0px 0px 20px;
+    }
+    input{
+      border:none;
+      padding:5px 10px;
+      padding-left: 30px;
+      padding-right: 0;
+    }
+  }
+  ul.main-menu {
+    font-size: 1.6rem;
+    font-weight: 300;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+i.cart-icon{
+  position: relative;
+  display: block;
+  width:29px;
+  height: 24px;;
+  background: url('./assets/img/cart_icon.png') no-repeat center center;
+  bottom: 2px
+}

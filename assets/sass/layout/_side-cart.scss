@@ -1,0 +1,243 @@
+.side-cart{
+  transition: $transition;
+  background-color: #ece8e5;
+  position: fixed;
+  width:400px;
+  height:100%;
+  top:0;
+  right:0;
+  overflow: scroll;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  box-shadow: 0 0 23px 1px rgba(0, 0, 0, 0.32);
+  .open-link{
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    top: 0;
+  }
+  .container{
+    .ico-info{
+      width:16px;
+      height:16px;
+      background-size: contain;
+      position: relative;
+      top:2px;
+    }
+    .separator{
+      background-color: #d7d4d1;
+      margin:20px 0;
+    }
+    padding:20px;
+    font-size: 1.3rem;
+    color: $text-grey;
+
+    .close-link{
+      float: right;
+      font-size: 1.8rem;
+      font-weight: 500;
+      .close-ico{
+        display: inline-block;
+        position: relative;
+        top:2px;
+        margin-left: 5px;
+      }
+    }
+    .top-info{
+      margin-top: 40px;
+      background-color: #dfdbd8;
+      padding:10px 25px;
+      text-align: justify;
+      color: $blue;
+    }
+    .heading{
+      margin-top: 20px;
+      display: flex;
+      .profile-picture{
+        min-width:66px;
+        margin-right: 10px;
+        height:93px;
+        background-size: cover;
+        background-position: center center;
+        box-shadow: 0 0 23px 1px rgba(0, 0, 0, 0.32);
+      }
+      .profile-info{
+        position: relative;
+        padding-right: 5px;
+        .close-cart{
+          position: absolute;
+          right: 0;
+          top:5px;
+          font-family: $base-font;
+          font-weight: 700;
+          .close-ico{
+            width:10px;
+            height:10px;
+
+          }
+        }
+        h3{
+          font-family: $heading-font;
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: $blue;
+          margin:0;
+          line-height: 2.1rem;
+        }
+        h4{
+          line-height: 1.6rem;
+          margin:0;
+          font-size: 1.3rem;
+          font-weight: 300;
+        }
+        .price{
+          font-size: 1.4rem;
+          font-weight: 700;
+          margin-top: 16px;
+        }
+        .number-input{
+          position: absolute;
+          right: 0;
+          bottom: 3px;
+          width:45px;
+          color: $text-grey;
+          padding:0 5px;
+        }
+      }
+    }
+    label{
+      font-weight: 400;
+    }
+    .row-select{
+      .row{
+        margin:10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .select{
+          border:1px solid $border-color;
+          width:200px;
+          select{
+            border:none;
+            height:40px;
+            width: 100%;
+            outline:none;
+          }
+        }
+      }
+    }
+    .white-box{
+      margin:20px 0;
+      padding:10px 20px;
+      background-color: white;
+      h4{
+        margin: 0;
+        font-weight: 400;
+        font-size: 1.4rem;
+      }
+      textarea{
+        width:100%;
+        border:1px solid $border-color;
+        padding:5px 10px;
+        margin:20px 0 10px;
+      }
+      .row{
+        display: flex;
+        justify-content: space-between;
+        margin:10px 0;
+        input{
+          width:220px;
+          height:27px;
+        }
+        label{
+          width:92px;
+        }
+        .date-input{
+          width:220px;
+          display: flex;
+          justify-content: space-between;
+          input{
+            width:96px;
+          }
+          span{
+            position: relative;
+            top:3px;
+          }
+        }
+        .inner-input{
+          width:220px;
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+          .ico-info{
+            position: absolute;
+            left:auto;
+            right:0px;
+            top:6px;
+            width:16px;
+            height:16px;
+            background-size: contain;
+          }
+          input{
+            width:60px;
+          }
+          .participant{
+            line-height: 1.4rem;
+            font-size: 1.1rem;
+            padding-right: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+.side-cart-total{
+  position: fixed;
+  width:400px;
+  bottom:0;
+  right:0;
+  background-color: white;
+  padding-bottom: 20px;
+  z-index:2;
+  .container{
+    padding:10px 20px;
+    h3{
+      font-size: 1.4rem;
+      font-weight: 700;
+      span{
+        font-weight: 700;
+        float: right;
+      }
+    }
+    a.back{
+      font-weight: 600;
+      font-size: 1.6rem;
+      position: relative;
+      top:4px;
+    }
+    button{
+      width:130px;
+      float: right;
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
+  }
+}
+.close-ico{
+  display: block;
+  width:14px;
+  height: 15px;;
+  background: url('./assets/img/close-ico.png') no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+}
+.ico-minus{
+  display: block;
+  width:12px;
+  height: 4px;
+  background: url('./assets/img/ico-minus.png') no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+}

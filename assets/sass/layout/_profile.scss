@@ -1,0 +1,87 @@
+$input-width: 350px;
+.profile-form{
+  line-height: 3rem;
+  .row{
+    display: flex;
+    padding:5px 0;
+    > label{
+      width:200px;
+    }
+    .cat-radio{
+      width:$input-width;
+      input[type='radio']{
+        margin-right:10px;
+      }
+      .fac-name{
+        margin-left: 22px;
+        input{
+          margin-left: 10px;
+          width:auto;
+          display: inline;
+          float: right;
+          width:205px;
+        }
+      }
+    }
+
+    input[type='text'], input[type='email'], input[type='password']{
+      width:$input-width;
+      display: block;
+      border:1px solid $border-color;
+      padding:0px 5px;
+    }
+    .input{
+      width:$input-width;
+      outline: none;
+      position: relative;
+      .ico-info{
+        position: absolute;
+        left:$input-width;
+        margin-left:10px;
+      }
+      &.select-box{
+        border:1px solid $border-color;
+        &.dr{
+          width:80px;
+        }
+      }
+      select{
+        outline:none;
+        width:100%;
+        border:none;
+      }
+    }
+    .double{
+      width:$input-width;
+      display: flex;
+      justify-content: space-between;
+      input{
+        width:49%;
+      }
+    }
+    .button-row{
+      width: $input-width;
+      display: flex;
+      justify-content: flex-end;
+      a{
+        padding:8px 30px;
+        color: $blue;
+        margin-right: 10px;
+        font-weight: 400;
+      }
+      button{
+        padding:8px 30px;
+      }
+    }
+  }
+}
+.ico-info{
+  position: relative;
+  display: inline-block;
+  width:24px;
+  height: 23px;;
+  background: url('./assets/img/iconmonstr-info.png') no-repeat center center;
+  top:4px;
+  left:4px;
+  cursor: pointer;
+}

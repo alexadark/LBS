@@ -1,0 +1,110 @@
+{# see `archive.twig` for an alternative strategy of extending templates #}
+{% extends "base.twig" %}
+
+{% block content %}
+    {# see `base.twig:27` for where this block's content will be inserted #}
+    <div class="search-page">
+        <div class="content-wrapper">
+            <div class="search-form">
+                <form action="{{ function ('get_permalink', 142) }}" method="post">
+                    <div class="cont-form">
+                        <div class="col">
+                            <input type="text" name="keyword" placeholder="Keyword" value="{{ keyword }}">
+                            <input type="text" name="author" placeholder="Author" value="{{ author }}">
+                            <input type="text" name="title" placeholder="Title" value="{{ stitle }}">
+                            <input type="text" name="case_id" placeholder="Case ID" value="{{ case_id }}">
+                        </div>
+                        <div class="col">
+                            <div class="select-wrap">
+                                <select name="industry" id="">
+                                    <option value="">Industry</option>
+                                    {% set industries = function ('get_term_options', 'industry') %}
+                                    {% for key, value in industries %}
+                                        {% if key == industry %}
+                                            <option selected value="{{ key }}">{{ value }}</option>
+                                        {% else %}
+                                            <option value="{{ key }}">{{ value }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+
+
+                                </select>
+                            </div>
+                            <div class="select-wrap">
+                                <select name="geography" id="">
+                                    <option value="">Geography</option>
+                                    {% set geo = function ('get_term_options', 'geography') %}
+                                    {% for key, value in geo %}
+                                        {% if key == geography %}
+                                            <option selected value="{{ key }}">{{ value }}</option>
+                                        {% else %}
+                                            <option value="{{ key }}">{{ value }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <p>Publication date range</p>
+                            <div class="date-range">
+                                <div class="select-wrap">
+                                    <select name="first_year" class="year" id="">
+                                        {% for current_year in tab_year %}
+                                            {% if current_year == first_year %}
+                                                <option selected value="{{ current_year }}">{{ current_year }}</option>
+                                            {% else %}
+                                                <option value="{{ current_year }}">{{ current_year }}</option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="to">to</div>
+                                <div class="select-wrap">
+                                    <select name="last_year" class="year" id="">
+                                        {% for current_year in tab_year %}
+                                            {% if current_year == last_year %}
+                                                <option selected value="{{ current_year }}">{{ current_year }}</option>
+                                            {% else %}
+                                                <option value="{{ current_year }}">{{ current_year }}</option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="default-button">Search</button>
+                </form>
+            </div>
+
+            {% for post in posts %}
+                {#{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}#}
+                <div class="search-item advanced-search">
+                    <div class="heading">
+                        {% set imgSrc = post.thumbnail.src %}
+                        {% if imgSrc %}
+                            <a href="{{ post.link }}"><div class="profile-picture" style="background-image: url('{{ imgSrc }}')"></div></a>
+                        {% else %}
+                            <a href="{{ post.link }}"><div class="profile-picture"></div></a>
+                        {% endif %}
+                        <div class="profile-info">
+                            <h4>{{ post.date | date('d-M-Y') }}</h4>
+                            <h3><a href="{{ post.link }}">{{ post.title | e('esc_html') }}</a></h3>
+                            <h4>{{ post.author_display_text | e('esc_html') }}</h4>
+                            <ul class="button-links">
+                                {{ function('the_terms',post.ID, 'topics', '<li>','</li><li>','</li>') }}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+        </div>
+
+    </div>
+    <div class="topics">
+        <h2>Topics</h2>
+        <ul>
+            {{ function('print_terms', 'topics') }}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,60 @@
+.sidebar{
+  min-width:315px;
+  margin-left: 20px;
+  margin-top: 40px;
+  h2 {
+    font-family: $heading-font;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $black;
+    margin-bottom:10px;
+    line-height: 2.3rem;
+  }
+}
+.separator{
+  height:3px;
+  background-color: #ebe8e5;
+  width:100%;
+  margin:50px 0;
+}
+.pdf-link{
+  display: flex;
+  align-items: flex-start;
+  margin:10px 0 25px 0;
+  i{
+    margin-right: 20px;
+    top:0;
+  }
+  .pdf-info {
+    font-size: 1.2rem;
+  }
+}
+.add-to-cart{
+  background: #ebe8e5;
+  border-top:3px solid black;
+  height:193px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  .cart-price{
+    .price{
+      font-size: 2.2rem;
+    }
+  }
+  .login-register{
+    color: $black;
+    &:hover{
+      color: $blue;
+    }
+  }
+  .default-button{
+    font-size: 1.8rem;
+    height:41px;
+    font-weight: 400;
+    width:170px;
+  }
+}

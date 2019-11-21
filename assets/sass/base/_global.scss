@@ -1,0 +1,105 @@
+.wrapper, .content-wrapper{
+  max-width:980px;
+  margin:0 auto;
+}
+.heading-section {
+  margin: 40px 0 0px;
+  color: black;
+  border-bottom: 3px solid black;
+  padding-bottom: 20px;
+}
+.upper{
+  text-transform: uppercase;
+}
+.default-button{
+  padding:5px 10px;
+  background: $blue;
+  color: white;
+  border:1px solid $blue;
+  cursor: pointer;
+  &.large{
+    padding:10px 15px;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  &:hover{
+    background: white;
+    color: $blue;
+  }
+  &--inverted{
+    padding:5px 10px;
+    background: white;
+    color: $blue;
+    border:1px solid $blue;
+    &:hover{
+      background: $blue;
+      color: white;
+    }
+  }
+}
+ol{
+  color: $black;
+  margin:0 0 0 18px;
+  padding:0;
+}
+ul.button-links{
+  display: flex;
+  flex-wrap:wrap;
+  margin:20px 0;
+  margin-left: -10px;
+  padding:0;
+  font-size: 1.4rem;
+  font-weight: 300;
+  li{
+    border: 1px solid $blue;
+    display: inline-block;
+    padding: 3px 10px;
+    margin: 7px 10px;
+    &:hover{
+      background-color: $blue;
+      a{
+        color: white;
+      }
+    }
+    a{
+      color: $blue;
+    }
+  }
+}
+table{
+  color: $black;
+  td{
+    padding-right:10px;
+  }
+}
+.topics{
+  display: flex;
+  h2{
+    min-width: 100px;
+    margin-top: 0;
+  }
+  ul {
+    margin:0;
+    padding:0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    li{
+      border: 2px solid rgba(255,255,255,.51);
+      background-color: $blue;
+      /*display: inline-block;*/
+      padding: 5px 10px;
+      margin: 5px 10px;
+      a{
+        color: white;
+      }
+      &:hover{
+        background-color: white;
+        border-color: $blue;
+        a{
+          color: $blue;
+        }
+      }
+    }
+  }
+}

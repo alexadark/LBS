@@ -1,0 +1,89 @@
+<div class="side-cart">
+    <a class="open-link"></a>
+    <div class="container">
+        <a href="#" class="close-link">Close <i class="close-ico"></i></a>
+        <div class="top-info">
+            Continue your purchase by completing the information below for each title in your cart
+        </div>
+        <div class="item">
+            <div class="heading">
+                {% set imgSrc = post.thumbnail.src %}
+                {% if imgSrc %}
+                    <div class="profile-picture" style="background-image: url('{{ imgSrc }}')"></div>
+                {% else %}
+                    <div class="profile-picture"></div>
+                {% endif %}
+                <div class="profile-info">
+                    <h3>{{ post.title | e('esc_html') }}</h3><a href="" class="close-cart"><i class="close-ico"></i></a>
+                    <h4>{{ post.author_display_text | e('esc_html') }} <br>Downloadable watermarked PDF</h4>
+                    <div class="price">£ {{ post.price_student }}</div>
+                    <input type="number" required class="number-input" value="30">
+                </div>
+            </div>
+        </div>
+        <div class="separator"></div>
+        <div class="row-select">
+            <div class="row">
+                <label for="">I will use this for:</label>
+                <div class="select">
+                    <select name="using" required id=""><option value="">Please select</option></select>
+                </div>
+            </div>
+            <div class="row">
+                <label for="">Type of course: </label>
+                <div class="select">
+                    <select name="type" required id=""><option value="">Please select</option></select>
+                </div>
+            </div>
+        </div>
+        <div class="white-box">
+            <div class="row">
+                <label for="">Course title</label>
+                <input type="text" required>
+            </div>
+            <div class="row">
+                <label for="">Institution</label>
+                <input type="text" required>
+            </div>
+            <div class="row">
+                <label for="">Course size</label>
+                <div class="inner-input">
+                    <i class="ico-info"></i>
+                    <input type="text" required placeholder="30">
+                    <div class="participant">
+                        Participants can <br>be invited later
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <label for="">Taught by</label>
+                <input type="text" required>
+            </div>
+            <div class="row">
+                <label for="">Courses dates</label>
+                <div class="date-input">
+                    <input type="text" required>
+                    <span>to</span>
+                    <input type="text" required>
+                </div>
+            </div>
+        </div>
+        <p>
+            Watermark <i class="ico-info"></i>
+        </p>
+        <div class="white-box">
+            <h4>Your document will be watermarked with the following text:</h4>
+            Purchased for use on the The Reality of AI Course taught by Julian Birkinshaw. from 07/08/2019 to 14/08/2019
+            <textarea name="" id="" cols="30" rows="5" placeholder="Maximum 200 characters"></textarea>
+        </div>
+    </div>
+</div>
+<div class="side-cart-total">
+    <div class="container">
+        <h3>Total including applicable taxes <span class="price">£ 280</span></h3>
+        <div class="button-row">
+            <a href="" class="back">< Back</a>
+            <button class="default-button">Next</button>
+        </div>
+    </div>
+</div>

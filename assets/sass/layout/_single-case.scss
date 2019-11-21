@@ -1,0 +1,77 @@
+.single-case{
+  .middle-section{
+    display: flex;
+    justify-content: space-between;
+    .left-content{
+      .heading{
+        .profile-picture{
+          background-size: cover;
+          background-position-x: center;
+          background-position-y: center;
+          width:156px;
+          height:220px;
+          float: left;
+          margin-right: 20px;
+          box-shadow: 0 0 23px 1px rgba(0, 0, 0, 0.32);
+          background-color: #a48282;
+        }
+        .profile-info{
+          a.button{
+            margin-left: 30px;
+          }
+          h1{
+            margin: 15px 0 0px;
+          }
+          h3{
+            color: $black;
+            font-size: 2.2rem;
+            font-weight:400;
+            margin:0;
+          }
+          .publication-date{
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: $black;
+          }
+        }
+
+      }
+    }
+    .sidebar{
+      width:325px;
+      padding:0 5px;
+    }
+  }
+}
+
+.doc-icon{
+  content: url('./assets/img/doc_icon.png');
+  position: relative;
+  top:8px;
+  margin-right: 10px;
+  //float: left;
+}
+.hat-icon{
+  content: url('./assets/img/mortarboard-educator.png');
+  position: relative;
+  top:8px;
+  margin-right: 10px;
+  width:34px;
+  //float: left;
+}
+
+span.flag{
+  &.new{
+    color: white;
+    background-color: $red;
+    padding:5px 10px;
+    margin-left: 20px;
+  }
+}
+table.details{
+  tr{
+    td:first-child{
+      min-width:140px;
+    }
+  }
+}

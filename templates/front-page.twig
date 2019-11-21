@@ -1,0 +1,123 @@
+{% extends "base.twig" %}
+{% block content %}
+    <h1>London Business School <br>
+    Case Collection</h1>
+    <div class="hero">
+        <div class="cont-image" style="background:url('{{ hero_image }}') center no-repeat; background-size: cover">
+            <div class="search-cases">
+                <h3>Search cases</h3>
+                {#<form id="searchform" method="get" action="<?php echo home_url('/'); ?>">
+                    <input type="text" class="search-field" name="s" placeholder="Search" value="<?php the_search_query(); ?>">
+                    <input type="submit" value="Search">
+                </form>#}
+                <form id="searchform" method="get" action="{{ function ('home_url', '/') }}">
+                    <input type="text" name="s" placeholder="Keyword" value="">
+                    <input type="text" name="author" placeholder="Author">
+                    <input type="text" name="title" placeholder="Title">
+                    <input type="text" name="case_id" placeholder="Case ID">
+                    <div class="buttons">
+                        <button type="submit" class="default-button search">Search</button>
+                        <a href="{{ function ('get_permalink', 142) }}">Advanced search</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="browse-topics">
+            <h3>Browse topics</h3>
+            <ul>
+                {{ function('print_terms', 'topics') }}
+            </ul>
+        </div>
+    </div>
+
+    <div class="tabset">
+        <!-- Tab 1 -->
+        <input type="radio" name="tabset" id="tab1" aria-controls="latest-cases" checked>
+        <label for="tab1">Latest cases</label>
+        <!-- Tab 2 -->
+        <input type="radio" name="tabset" id="tab2" aria-controls="featured-case">
+        <label for="tab2">Featured case</label>
+        <!-- Tab 3 -->
+        <input type="radio" name="tabset" id="tab3" aria-controls="latest-articles">
+        <label for="tab3">Latest articles</label>
+
+        <div class="tab-panels">
+            <section id="latest-cases" class="tab-panel">
+                <div class="contenttabs">
+                    {% for case in latest_cases %}
+                        <div class="case">
+                            <div class="inner-case">
+                                <div class="cont-image">
+                                    <a href="{{ case.permalink }}"><img src="{{ case.image_url }}" alt=""></a>
+                                </div>
+                                <div class="desc">
+                                    <h4><a href="{{ case.permalink }}">{{ case.title | e('wp_kses_post') | wpautop }}</a></h4>
+                                    <p>{{ case.excerpt | e('esc_html') }}</p>
+                                    <p>{{ case.author }}</p>
+                                </div>
+
+                                <ul class="category">
+                                    <li><a href="{{ function('get_term_link', case.topic[0].term_id) }}">{{ case.topic[0].name }}</a></li>
+                                </ul>
+                                <ul class="category hidden">
+                                    <li><a href="{{ function('get_term_link', case.topic[0].term_id) }}">{{ case.topic[0].name }}</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    {% endfor%}
+                </div>
+            </section>
+            <section id="featured-case" class="tab-panel">
+                {% set case = featured_cases_option %}
+                <div class="featured-case">
+                    <div class="featured-case--image" style="background-image: url('{{ case.image_url_large }}');"></div>
+                    <div class="content">
+                        <div class="content--inner">
+                            <h2>{{ case.title | e('esc_html') }}</h2>
+                            <span class="author">{{ case.author }}</span>
+                            <p>{{ case.excerpt | e('esc_html') }}</p>
+                            <p><a href="{{ case.permalink }}" class="readmore default-button">Read more</a></p>
+                            <ul class="button-links">
+                                {% if case.topic %}
+                                    <li class="topic"><a href="{{ function('get_term_link', case.topic[0].term_id) }}">{{ case.topic[0].name }}</a></li>
+                                {% endif %}
+                                {% if case.subject %}
+                                    <li class="subject"><a href="{{ function('get_term_link', case.subject[0].term_id) }}">{{ case.subject[0].name }}</a></li>
+                                {% endif %}
+                                {% if case.industry %}
+                                    <li class="industry"><a href="{{ function('get_term_link', case.industry[0].term_id) }}">{{ case.industry[0].name }}</a></li>
+                                {% endif %}
+                                {% if case.geography %}
+                                    <li class="geography"><a href="{{ function('get_term_link', case.geography[0].term_id) }}">{{ case.geography[0].name }}</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="latest-articles" class="tab-panel">
+                <h2>{{ latest_post.title }}</h2>
+                <p>{{ latest_post.content }}</p>
+            </section>
+        </div> {#--tabpanels--#}
+
+    </div>{#--Tabset--#}
+
+    <div class="embed-post">
+        <div class="podcast">
+            <h2>{{ post.podcast_title }} <i class="podcast-icon"><img src="{{ theme.path }}/assets/img/podcast-icon.png" alt=""></i></h2>
+            <h4>{{ post.podcast_summary }}</h4>
+            <div class="embed-code">
+                {{ post.podcast_embed_code }}
+            </div>
+        </div>
+        <div class="twitter">
+            <h2>Follow us on Twitter <i class="twitter-icon"><img src="{{ theme.path }}/assets/img/twitter-icon.png" alt=""></i></h2>
+            <div class="embed-code">
+                <a class="twitter-timeline" data-height="350" href="https://twitter.com/LBS?ref_src=twsrc%5Etfw">Tweets by LBS</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+    </div>
+    {% include "partial/bottom-banner.twig" %}
+{% endblock %}
