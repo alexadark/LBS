@@ -1,26 +1,26 @@
 @font-face {
-  font-family: 'GT Sectra Fine';
-  src: url('assets/fonts/GTSectraFine-Bold.eot');
-  src: url('assets/fonts/GTSectraFine-Bold.eot?#iefix')
-      format('embedded-opentype'),
-    url('assets/fonts/GTSectraFine-Bold.woff2') format('woff2'),
-    url('assets/fonts/GTSectraFine-Bold.woff') format('woff'),
-    url('assets/fonts/GTSectraFine-Bold.ttf') format('truetype'),
-    url('assets/fonts/GTSectraFine-Bold.svg#GTSectraFine-Bold') format('svg');
+  font-family: "GT Sectra Fine";
+  src: url("assets/fonts/GTSectraFine-Bold.eot");
+  src: url("assets/fonts/GTSectraFine-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("assets/fonts/GTSectraFine-Bold.woff2") format("woff2"),
+    url("assets/fonts/GTSectraFine-Bold.woff") format("woff"),
+    url("assets/fonts/GTSectraFine-Bold.ttf") format("truetype"),
+    url("assets/fonts/GTSectraFine-Bold.svg#GTSectraFine-Bold") format("svg");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'GT Sectra Fine';
-  src: url('assets/fonts/GTSectraFine-Medium.eot');
-  src: url('assets/fonts/GTSectraFine-Medium.eot?#iefix')
-      format('embedded-opentype'),
-    url('assets/fonts/GTSectraFine-Medium.woff2') format('woff2'),
-    url('assets/fonts/GTSectraFine-Medium.woff') format('woff'),
-    url('assets/fonts/GTSectraFine-Medium.ttf') format('truetype'),
-    url('assets/fonts/GTSectraFine-Medium.svg#GTSectraFine-Medium')
-      format('svg');
+  font-family: "GT Sectra Fine";
+  src: url("assets/fonts/GTSectraFine-Medium.eot");
+  src: url("assets/fonts/GTSectraFine-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("assets/fonts/GTSectraFine-Medium.woff2") format("woff2"),
+    url("assets/fonts/GTSectraFine-Medium.woff") format("woff"),
+    url("assets/fonts/GTSectraFine-Medium.ttf") format("truetype"),
+    url("assets/fonts/GTSectraFine-Medium.svg#GTSectraFine-Medium")
+      format("svg");
   font-weight: 500;
   font-style: normal;
 }
@@ -41,23 +41,24 @@ body {
     font-size: $base-font-size;
   }
 }
-p, span{
+p,
+span {
   color: $black;
-  font-weight:300;
+  font-weight: 300;
   font-size: 1.4rem;
   font-family: $base-font;
 }
 
 a {
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   text-decoration: none;
   color: $black;
   &:hover {
     color: $blue;
   }
 }
-button{
-  transition: all .4s ease-in-out;
+button {
+  transition: all 0.4s ease-in-out;
 }
 
 .text-center {
@@ -74,7 +75,7 @@ button{
 .text-justify {
   text-align: justify;
 }
-.black-text{
+.black-text {
   color: $black;
 }
 strong,
@@ -96,19 +97,21 @@ h6 {
   }
 }
 
-h1, .main-title {
+h1,
+.main-title {
   font-family: $heading-font;
   font-size: 2.4rem;
   font-weight: 700;
   color: $blue;
-  margin:25px 0;
+  margin: 25px 0;
   @include min-screen($m) {
     font-size: 4.8rem;
     line-height: 5.8rem;
   }
 }
 
-h2, .subtitle {
+h2,
+.subtitle {
   font-family: $heading-font;
   font-size: 1.8rem;
   font-weight: 400;
@@ -119,7 +122,8 @@ h2, .subtitle {
     font-size: 2.4rem;
   }
 }
-h3, .headline{
+h3,
+.headline {
   font-family: $base-font;
   font-size: 1.6rem;
   font-weight: 500;
@@ -127,7 +131,8 @@ h3, .headline{
     font-size: 1.8rem;
   }
 }
-h4, .headline-light{
+h4,
+.headline-light {
   font-family: $base-font;
   font-size: 1.6rem;
   font-weight: 300;
@@ -142,6 +147,6 @@ h4, .headline-light{
 .uppercase {
   text-transform: uppercase;
 }
-a{
+a {
   color: $blue;
 }
